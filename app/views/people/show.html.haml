@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Firstname:
+  = @person.firstname
+%p
+  %strong Lastname:
+  = @person.lastname
+%p
+  %strong Dob:
+  = @person.dob
+%p
+  %strong Gender:
+  = @person.gender
+= link_to 'Edit', edit_person_path(@person)
+|
+= link_to 'Back', people_path
