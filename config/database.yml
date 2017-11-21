@@ -20,10 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: root
+  # username: postgres
+  # password: root
 
-  
 development:
   <<: *default
   database: miniMedic_development
@@ -84,5 +83,6 @@ test:
 production:
   <<: *default
   database: miniMedic_production
-  username: miniMedic
+  # username: postgres
   password: <%= ENV['MINIMEDIC_DATABASE_PASSWORD'] %>
+  # password: root
