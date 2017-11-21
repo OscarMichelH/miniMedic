@@ -1,6 +1,6 @@
 %p#notice= notice
 %h1 People
-%table
+%table(class="table")
   %thead
     %tr
       %th Firstname
@@ -16,7 +16,4 @@
         %td= person.dob
         %td= person.gender
         %td= link_to 'Show', person
-        %td= link_to 'Edit', edit_person_path(person)
-        %td= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Person', new_person_path

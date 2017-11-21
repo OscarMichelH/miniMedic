@@ -10,16 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113084913) do
+ActiveRecord::Schema.define(version: 20171120081437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "areas", force: :cascade do |t|
+    t.integer "leader"
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.integer "area_id"
+    t.string "speciality"
+    t.integer "yearsexperience"
+    t.float "salary"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "insuranceplan"
+  end
+
   create_table "people", force: :cascade do |t|
+    t.string "actable_type"
+    t.bigint "actable_id"
     t.string "firstname"
     t.string "lastname"
     t.date "dob"
     t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actable_type", "actable_id"], name: "index_people_on_actable_type_and_actable_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.integer "patient_id"
+    t.integer "doctor_id"
+    t.string "duration"
+    t.string "medicaments"
+    t.string "prescription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

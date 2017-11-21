@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @patient.firstname
+%p
+  %b Lastname:
+  = @patient.lastname
+%p
+  %b Dob:
+  = @patient.dob
+%p
+  %b Gender:
+  = @patient.gender
+%p
+  %b Insuranceplan:
+  = @patient.insuranceplan
+
+= link_to 'Edit', edit_patient_path(@patient)
+\|
+= link_to 'Back', patients_path

@@ -2,9 +2,30 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title MiniMedic
+    %title Mini Medic
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .navbar.navbar-default.navbar-static-top
+      .container
+        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        -# %a.navbar-brand(href="#") <%= app_name %>
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "Personas", "/people"
+            %li= link_to "Doctores", "/doctors"
+            %li= link_to "Pacientes", "/patients"
+            %li= link_to "Tratamientos", "/treatments"
+            %li= link_to "Areas", "/areas"
+
+
+    %div(class="jumbotron")
+      %div(class="row")
+        %div(class="col-md-4")
+        %div(class="col-md-4")
+          = yield
+        %div(class="col-md-4")

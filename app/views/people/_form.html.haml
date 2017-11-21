@@ -9,15 +9,15 @@
           %li= message
   .field
     = form.label :firstname
-    = form.text_field :firstname, id: :person_firstname
+    = form.text_field :firstname
   .field
     = form.label :lastname
-    = form.text_field :lastname, id: :person_lastname
+    = form.text_field :lastname
   .field
     = form.label :dob
-    = form.date_select :dob, id: :person_dob
+    = form.date_field :dob
   .field
     = form.label :gender
-    = form.text_field :gender, id: :person_gender
+    = f.select(:gender, options_for_select([['M','M'] ,['F','F'],['O','O']]))
   .actions
     = form.submit

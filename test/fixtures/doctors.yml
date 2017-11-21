@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area_id: 1
+  firstname: MyString
+  lastname: MyString
+  dob: 2017-11-20
+  gender: MyString
+  speciality: MyString
+  yearsexperience: 1
+
+two:
+  area_id: 1
+  firstname: MyString
+  lastname: MyString
+  dob: 2017-11-20
+  gender: MyString
+  speciality: MyString
+  yearsexperience: 1

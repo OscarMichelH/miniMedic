@@ -1,0 +1,29 @@
+%h1 Treatments
+
+%table(class="table")
+  %thead
+    %tr
+      %th Patient
+      %th Doctor
+      %th Duration
+      %th Medicaments
+      %th Prescription
+      %th
+      %th
+      %th
+
+  %tbody
+    - @treatments.each do |treatment|
+      %tr
+        %td= treatment.patient_id
+        %td= treatment.doctor_id
+        %td= treatment.duration
+        %td= treatment.medicaments
+        %td= treatment.prescription
+        %td= link_to 'Show', treatment
+        %td= link_to 'Edit', edit_treatment_path(treatment)
+        %td= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Treatment', new_treatment_path

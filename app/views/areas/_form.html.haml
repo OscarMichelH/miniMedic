@@ -1,0 +1,19 @@
+= form_for @area do |f|
+  - if @area.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@area.errors.count, "error")} prohibited this area from being saved:"
+      %ul
+        - @area.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :leader
+    = collection_select(:area, :leader, Doctor.order("speciality ASC").all, :id, :name_with_speciality,{}, prompt: true )
+  .field
+    = f.label :name
+    = f.select(:name, options_for_select([['Allergology','Allergology'],['Radiology','Radiology'],['Cardiology','Cardiology'],['General Medicine','General Medicine'],['Gerontology','Gerontology'],['Obstetrics','Obstetrics'],['Pediatrics','Pediatrics'],['Traumatology','Traumatology']]))
+  .field
+    = f.label :location
+    = f.text_field :location
+  .actions
+    = f.submit 'Save'

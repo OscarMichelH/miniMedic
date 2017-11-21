@@ -1,0 +1,25 @@
+%h1 Areas
+
+%table(class="table")
+  %thead
+    %tr
+      %th Leader
+      %th Name
+      %th Location
+      %th
+      %th
+      %th
+
+  %tbody
+    - @areas.each do |area|
+      %tr
+        %td= area.leader
+        %td= area.name
+        %td= area.location
+        %td= link_to 'Show', area
+        %td= link_to 'Edit', edit_area_path(area)
+        %td= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Area', new_area_path

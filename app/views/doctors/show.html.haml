@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Area:
+  = @doctor.area_id
+%p
+  %b Firstname:
+  = @doctor.firstname
+%p
+  %b Lastname:
+  = @doctor.lastname
+%p
+  %b Dob:
+  = @doctor.dob
+%p
+  %b Gender:
+  = @doctor.gender
+%p
+  %b Speciality:
+  = @doctor.speciality
+%p
+  %b Yearsexperience:
+  = @doctor.yearsexperience
+
+= link_to 'Edit', edit_doctor_path(@doctor)
+\|
+= link_to 'Back', doctors_path

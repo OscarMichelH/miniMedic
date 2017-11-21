@@ -1,3 +1,24 @@
-# The Minimal Medic Patient System
+# README
 
-The Minimal Medic Patient systems keeps track of the treatments a patient receives in a hospital. The database consist of information of people that can be patients or doctors, but not both. Person has partial participation in the hierarchy. A patient receives one or several treatments that were submitted by his-her doctor(s). A patient can have several illness and therefore she/he can visit several doctors Medical doctors are assigned to different areas of the hospital. A doctor has one or several specialties but she/he is associated to only one Area within the hospital
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

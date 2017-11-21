@@ -1,0 +1,31 @@
+%h1 Doctors
+
+%table(class = "table")
+  %thead
+    %tr
+      %th Area
+      %th Firstname
+      %th Lastname
+      %th Dob
+      %th Gender
+      %th Speciality
+      %th Yearsexperience
+      %th
+      %th
+      %th
+
+  %tbody
+    - @doctors.each do |doctor|
+      %tr
+        %td= doctor.area_id
+        %td= doctor.firstname
+        %td= doctor.lastname
+        %td= doctor.dob
+        %td= doctor.gender
+        %td= doctor.speciality
+        %td= doctor.yearsexperience
+        %td= link_to 'Show', doctor
+        %td= link_to 'Edit', edit_doctor_path(doctor)
+%br
+
+= link_to 'New Doctor', new_doctor_path

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Patient:
+  = @treatment.patient_id
+%p
+  %b Doctor:
+  = @treatment.doctor_id
+%p
+  %b Duration:
+  = @treatment.duration
+%p
+  %b Medicaments:
+  = @treatment.medicaments
+%p
+  %b Prescription:
+  = @treatment.prescription
+
+= link_to 'Edit', edit_treatment_path(@treatment)
+\|
+= link_to 'Back', treatments_path
