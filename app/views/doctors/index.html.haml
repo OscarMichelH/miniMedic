@@ -10,6 +10,7 @@
       %th Gender
       %th Speciality
       %th Yearsexperience
+      %th Salary
       %th
       %th
       %th
@@ -17,13 +18,16 @@
   %tbody
     - @doctors.each do |doctor|
       %tr
-        %td= doctor.area_id
+        - a = Area.find_by_id(doctor.area_id)
+        - zona = a.name + " - " + a.location
+        %td= zona
         %td= doctor.firstname
         %td= doctor.lastname
         %td= doctor.dob
         %td= doctor.gender
         %td= doctor.speciality
         %td= doctor.yearsexperience
+        %td= doctor.salary
         %td= link_to 'Show', doctor
         %td= link_to 'Edit', edit_doctor_path(doctor)
 %br

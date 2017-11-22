@@ -15,14 +15,16 @@
   %tbody
     - @treatments.each do |treatment|
       %tr
-        %td= treatment.patient_id
-        %td= treatment.doctor_id
+        - p = Patient.find_by_id(treatment.patient_id)
+        - d = Doctor.find_by_id(treatment.doctor_id)
+        %td= p.firstname + " " + p.insuranceplan
+        %td= d.firstname + " " + d.speciality
         %td= treatment.duration
         %td= treatment.medicaments
         %td= treatment.prescription
         %td= link_to 'Show', treatment
         %td= link_to 'Edit', edit_treatment_path(treatment)
-        %td= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' }
+        -# %td= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

@@ -14,6 +14,7 @@ gem 'haml'
 gem "haml-rails", "~> 1.0"
 # bootstrap
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 #
 gem 'jquery-ui-rails'
 #

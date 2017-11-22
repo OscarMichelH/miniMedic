@@ -13,12 +13,13 @@
   %tbody
     - @areas.each do |area|
       %tr
-        %td= area.leader
+        - d = Doctor.find_by_id(area.leader)
+        %td= d.firstname
         %td= area.name
         %td= area.location
         %td= link_to 'Show', area
         %td= link_to 'Edit', edit_area_path(area)
-        %td= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' }
+        -# %td= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
