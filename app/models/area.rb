@@ -7,7 +7,7 @@ class Area < ApplicationRecord
     doctor = Doctor.find_by_id(leader)
 
     arealeaded = Area.find_by_leader(leader)
-    
+
 
     # Si no hay doctor
     if doctor == nil

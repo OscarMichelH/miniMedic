@@ -17,8 +17,8 @@
       %tr
         - p = Patient.find_by_id(treatment.patient_id)
         - d = Doctor.find_by_id(treatment.doctor_id)
-        %td= p.firstname + " " + p.insuranceplan
-        %td= d.firstname + " " + d.speciality
+        %td= p.firstname + " - " + p.insuranceplan
+        %td= d.firstname + " - " + d.speciality
         %td= treatment.duration
         %td= treatment.medicaments
         %td= treatment.prescription
